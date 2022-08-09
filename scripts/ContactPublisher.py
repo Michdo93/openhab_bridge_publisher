@@ -29,7 +29,7 @@ class ContactPublisher(object):
 
             self.message = ContactCommand()
 
-            self.message.command = "OPEN"
+            self.message.command = ContactCommand.OPEN
 
             self.message.header.stamp = rospy.Time.now()
             self.message.header.frame_id = "/base_link"
