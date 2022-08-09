@@ -30,7 +30,8 @@ class NumberPublisher(object):
 
             self.message = NumberCommand()
 
-            self.message.command = float(i + 1)
+            i = i + 1
+            self.message.command = float(i)
 
             self.message.header.stamp = rospy.Time.now()
             self.message.header.frame_id = "/base_link"
