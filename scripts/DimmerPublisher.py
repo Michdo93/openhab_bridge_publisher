@@ -29,10 +29,10 @@ class DimmerPublisher(object):
 
             self.message = DimmerCommand()
 
-            self.message.command = "DOWN"
-            self.message.iscommand = True
-            self.message.ispercentage = False
-            self.message.percentage = 0
+            self.message.command = DimmerCommand.ON
+            self.message.iscommand = False
+            self.message.ispercentage = True
+            self.message.percentage = DimmerCommand.PERCENTAGE80
 
             self.message.header.stamp = rospy.Time.now()
             self.message.header.frame_id = "/base_link"
