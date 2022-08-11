@@ -30,6 +30,8 @@ class StringPublisher(object):
             self.message = StringCommand()
 
             self.message.command = "Hello World %s" % rospy.get_time()
+            
+            self.message.isnull = False
 
             self.message.header.stamp = rospy.Time.now()
             self.message.header.frame_id = "/base_link"
