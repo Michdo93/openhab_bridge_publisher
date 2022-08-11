@@ -13,7 +13,7 @@ class StringPublisher(object):
 
         # Initialize message variables.
         self.enable = False
-        self.message = ""
+        self.message = None
 
         if self.enable:
             self.start()
