@@ -33,6 +33,8 @@ class RollershutterPublisher(object):
             self.message.iscommand = True
             self.message.ispercentage = False
             self.message.percentage = 0
+            
+            self.message.isnull = False
 
             self.message.header.stamp = rospy.Time.now()
             self.message.header.frame_id = "/base_link"
