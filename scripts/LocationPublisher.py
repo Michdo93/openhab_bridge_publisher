@@ -32,6 +32,8 @@ class LocationPublisher(object):
             self.message.latitude = 48.0501442
             self.message.longitude = 8.2014192
             self.message.altitude = 857.0
+            
+            self.message.isnull = False
 
             self.message.header.stamp = rospy.Time.now()
             self.message.header.frame_id = "/base_link"
