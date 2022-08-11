@@ -37,6 +37,8 @@ class ColorPublisher(object):
             self.message.hue = 127
             self.message.saturation = 61
             self.message.brightness = 99
+            
+            self.message.isnull = False
 
             self.message.header.stamp = rospy.Time.now()
             self.message.header.frame_id = "/base_link"
