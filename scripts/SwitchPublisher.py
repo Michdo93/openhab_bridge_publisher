@@ -30,6 +30,8 @@ class SwitchPublisher(object):
             self.message = SwitchCommand()
 
             self.message.command = "ON"
+            
+            self.message.isnull = False
 
             self.message.header.stamp = rospy.Time.now()
             self.message.header.frame_id = "/base_link"
