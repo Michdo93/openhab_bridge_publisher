@@ -52,6 +52,9 @@ class ImagePublisher(object):
                 img[:,:,1] = numpy.ones([200,200])*255
                 img[:,:,2] = numpy.ones([200,200])*0
 
+            # finally convert RGB image to BGR for opencv
+            img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
+
             try:
                 self.image = self.bridge.cv2_to_imgmsg(img, 'bgr8')
             except CvBridgeError as e:
