@@ -46,7 +46,11 @@ class ImagePublisher(object):
             else:
                 self.message.isnull = True
                 self.image_path = "NULL"
-                img = np.zeros((100,100,3), np.uint8)
+                img = numpy.zeros([200,200,3])
+
+                img[:,:,0] = numpy.ones([200,200])*255
+                img[:,:,1] = numpy.ones([200,200])*255
+                img[:,:,2] = numpy.ones([200,200])*0
 
             try:
                 self.image = self.bridge.cv2_to_imgmsg(img, 'bgr8')
