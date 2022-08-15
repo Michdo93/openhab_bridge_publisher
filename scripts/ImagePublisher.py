@@ -46,7 +46,10 @@ class ImagePublisher(object):
             else:
                 self.message.isnull = True
                 self.image_path = "NULL"
-                img = np.zeros((100,100,3), np.uint8)
+                img = np.zeros((100,100,3), dtype=np.uint8)
+
+            # finally convert RGB image to BGR for opencv
+            img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
 
             try:
                 self.image = self.bridge.cv2_to_imgmsg(img, 'bgr8')
